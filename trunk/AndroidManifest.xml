@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.tako.hko"
+      android:versionCode="108"
+      android:versionName="5.14">
+    <application android:icon="@drawable/logo" android:label="@string/app_name">
+    <!-- android:debuggable="true"> -->
+        <activity android:name=".HKOActivity"
+                  android:label="@string/app_name">    
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".HKOHelp" android:theme="@android:style/Theme.Dialog">
+        	<intent-filter>
+        		<action android:name="android.intent.action.MAIN" />
+        		<category android:name="android.intent.category.INFO" />
+        	</intent-filter>
+        </activity>
+        <activity android:name=".HKOOption"/>
+		<activity android:name=".HKOTyphoonOption"/>
+		<!-- Widget 1 -->
+		<receiver android:name=".HKOSmallWidget" android:label="@string/widget_small">
+			<intent-filter>
+   		     	<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+   	 		</intent-filter>
+    		<meta-data android:name="android.appwidget.provider"
+        		       android:resource="@xml/hkowidget_small"/>
+		</receiver>
+		<receiver android:name=".HKOSmallWidget">
+			<intent-filter>
+   		     	<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+   		     	<data android:scheme="hkosmallwidget"/>
+   	 		</intent-filter>
+    		<meta-data android:name="android.appwidget.provider"
+        		       android:resource="@xml/hkowidget_small"/>
+		</receiver>
+		<receiver android:name=".HKOSmallWidget">
+     		<intent-filter>
+        		<action android:name="com.tako.hko.WIDGET_CONTROL" />
+        		<data android:scheme="update_small_widget" />
+     		</intent-filter>
+  		</receiver>
+  		<!-- Widget 1 End -->
+  		<!-- Widget 2 -->
+		<receiver android:name=".HKOLargeWidget" android:label="@string/widget_large">
+			<intent-filter>
+   		     	<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+   	 		</intent-filter>
+    		<meta-data android:name="android.appwidget.provider"
+        		       android:resource="@xml/hkowidget_large"/>
+		</receiver>
+		<receiver android:name=".HKOLargeWidget">
+			<intent-filter>
+   		     	<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+   		     	<data android:scheme="hkolargewidget"/>
+   	 		</intent-filter>
+    		<meta-data android:name="android.appwidget.provider"
+        		       android:resource="@xml/hkowidget_large"/>
+		</receiver>
+		<receiver android:name=".HKOLargeWidget">
+     		<intent-filter>
+        		<action android:name="com.tako.hko.WIDGET_CONTROL" />
+        		<data android:scheme="update_large_widget" />
+     		</intent-filter>
+  		</receiver>
+  		<!-- Widget 2 End -->
+		<!-- Receiver for startup notification -->
+		<receiver android:name="NotiServiceReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+				<category android:name="android.intent.category.HOME"/>
+			</intent-filter>
+		</receiver>
+
+ 		<service android:name=".WidgetSmallService" />   
+ 		<service android:name=".WidgetLargeService" />   
+ 		<service android:name=".NotiService">
+ 			<intent-filter>
+                <action android:name="com.tako.hko.NotiService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+ 		</service>
+	</application>
+<uses-sdk android:minSdkVersion="3" />
+
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>  
+<user-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></user-permission>
+</manifest> 
