@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/widgetLargeLayout"
+    android:orientation="vertical"
+    android:layout_width="320dp"
+    android:layout_height="100dp"
+ >
+	<ImageView
+   		android:id="@+id/widgetback_large"
+		android:layout_width="320dp"
+		android:layout_height="100dp"
+		android:layout_marginTop="5dp"
+		android:layout_marginLeft="5dp"
+		android:scaleType="fitXY"
+	/>
+	
+		<TextView android:id="@+id/uvLevel_large"
+		style="@style/largeText"
+		android:textSize="16dp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="20dp"
+		android:layout_marginLeft="30dp"
+		android:layout_alignLeft="@id/widgetback_large"
+		android:layout_alignParentBottom="true"
+	/>
+	<ImageView
+   		android:id="@+id/humidityicon_large"
+		android:layout_width="18dp"
+		android:layout_height="18dp"
+		android:layout_marginBottom="3dp"
+		android:layout_above="@id/uvLevel_large"
+		android:layout_marginLeft="30dp"
+	/>
+	<ImageView
+   		android:id="@+id/tempicon_large"
+		android:layout_width="20dp"
+		android:layout_height="20dp"
+		android:layout_marginBottom="5dp"
+		android:layout_alignLeft="@id/humidityicon_large"
+		android:layout_above="@id/humidityicon_large"
+	/>
+	<ImageView android:id="@+id/todayicon_large"
+		android:layout_width="100dp"
+		android:layout_height="100dp"
+		android:scaleType="centerCrop"
+		android:layout_centerInParent="true"
+	/>
+	<TextView android:id="@+id/humidity_large"
+		style="@style/largeText"
+		android:textSize="19dp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="5dp"
+		android:layout_toRightOf="@id/humidityicon_large"
+		android:layout_above="@id/uvLevel_large"
+	/>
+	<TextView android:id="@+id/temp_large"
+		style="@style/largeText"
+		android:textSize="19dp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@id/humidity_large"
+		android:layout_above="@id/humidity_large"
+	/>
+
+	
+
+	<!--<TextView android:id="@+id/timeStamp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textSize="10px"
+	/>-->
+	<ImageView android:id="@+id/fire_large"
+		android:layout_width="32dp"
+		android:layout_height="32dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginTop="8dp"
+		android:layout_alignParentRight="true"
+	/>
+<!-- <ImageView android:id="@+id/rain"
+		android:layout_width="32dp"
+		android:layout_height="32dp"
+		android:layout_toRightOf="@id/fire"
+		android:layout_alignBottom="@id/fire"
+		android:layout_below="@id/temp"
+	/>
+-->
+	<ImageView android:id="@+id/typhoon_large"
+  		android:layout_width="32dp"
+		android:layout_height="32dp"
+		android:layout_toLeftOf="@id/fire_large"
+		android:layout_alignTop="@id/fire_large"
+	/>
+	<ImageView android:id="@+id/extreme_temp_large"
+		android:layout_width="32dp"
+		android:layout_height="32dp"
+		android:layout_below="@id/fire_large"
+		android:layout_alignRight="@id/fire_large"
+	/>
+	<ImageView android:id="@+id/others_large"
+		android:layout_width="32dp"
+		android:layout_height="32dp"
+		android:layout_toLeftOf="@id/extreme_temp_large"
+		android:layout_alignTop="@id/extreme_temp_large"
+	/>	
+	<ImageView android:id="@+id/error_large"
+		android:layout_width="20dp"
+		android:layout_height="20dp"
+		android:layout_toRightOf="@id/uvLevel_large"
+		android:layout_alignBottom="@id/uvLevel_large"
+	/>
+	<TextView android:id="@+id/updateText_large"
+		android:textSize="13dp"
+		style="@style/largeText"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="12dp"
+		android:layout_marginLeft="20dp"
+		android:textColor="#000000"
+		android:text="Loading..."
+		android:visibility="invisible"
+	/>
+	<TextView android:id="@+id/updateTime_large"
+		android:textSize="13dp"
+		style="@style/largeText"
+		android:layout_width="80dp"
+		android:layout_height="wrap_content"
+		android:layout_alignBottom="@id/updateText_large"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="15dp"
+		android:textColor="#000000"
+		android:text="Last:"
+	/>
+</RelativeLayout>

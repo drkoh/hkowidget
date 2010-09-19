@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="10dp"
+              >
+	<TextView android:id="@+id/sample"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:text="Sample Text"
+	/>
+	<ImageView android:id="@+id/sample_back"
+			   android:layout_width="50dp"
+			   android:layout_height="30dp"
+			   android:src="@drawable/testback"
+	/>
+	<TextView android:id="@+id/redLabel"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content"
+    		  android:layout_marginBottom="5dp"
+    		  style="@style/labelText"
+    />
+	<SeekBar android:id="@+id/red"
+       		 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 style="@style/seekbarStyle"
+	/>
+	<TextView android:id="@+id/greenLabel"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content"
+    		  android:layout_marginBottom="5dp"
+    		  style="@style/labelText"
+    />
+	<SeekBar android:id="@+id/green"
+       		 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 style="@style/seekbarStyle"
+	/>
+	<TextView android:id="@+id/blueLabel"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content"
+    		  android:layout_marginBottom="5dp"
+    		  style="@style/labelText"
+    />
+	<SeekBar android:id="@+id/blue"
+       		 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 style="@style/seekbarStyle"
+	/>
+	<TextView android:id="@+id/alphaLabel"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content"
+    		  android:layout_marginBottom="5dp"
+    		  style="@style/labelText"
+    />
+	<SeekBar android:id="@+id/alpha"
+       		 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 style="@style/seekbarStyle"
+	/>    			
+	<CheckBox android:id="@+id/grey"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:layout_marginBottom="5dp"
+			  style="@style/labelText"
+	/>
+</LinearLayout>

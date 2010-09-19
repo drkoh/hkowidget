@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="darkText">
+
+        <item name="android:textColor">#d3d3d9</item>
+        <item name="android:shadowColor">#0a0a0a</item>
+        <item name="android:shadowDx">1.2</item>
+     	<item name="android:shadowDy">1.2</item>
+     	<item name="android:shadowRadius">1.2</item>>
+     </style>
+     <style name="lightText">
+        <item name="android:textColor">#d3d3d9</item>
+        <item name="android:shadowColor">#cfcfcf</item>
+        <!-- <item name="android:shadowDx">1.8</item>
+     	<item name="android:shadowDy">1.8</item>
+     	<item name="android:shadowRadius">1.8</item>>
+     	<item name="android:textStyle">bold</item> -->
+     </style>
+     <style name="largeText">
+        <item name="android:textColor">#d3d3d9</item>
+        <item name="android:shadowColor">#0a0a0a</item>
+        <item name="android:shadowDx">1.8</item>
+     	<item name="android:shadowDy">1.8</item>
+     	<item name="android:shadowRadius">1.8</item>>
+     	<item name="android:textStyle">bold</item> -->
+     </style>
+     <style name="tabText">
+        <item name="android:textSize">17sp</item>
+     </style>
+     <style name="labelText">
+     	<item name="android:textSize">11sp</item>
+     </style>
+     <style name="seekbarStyle">
+     	<item name="android:layout_marginLeft">5dp</item>
+     	<item name="android:layout_marginRight">5dp</item>
+     	<item name="android:layout_marginBottom">5dp</item>
+     </style>
+</resources>
