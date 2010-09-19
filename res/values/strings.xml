@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hong Kong Weather</string>
+    <string name="refresh_chi">更新</string>
+    <string name="option_chi">設定</string>
+    <string name="about_chi">關於</string>
+    <string name="sel_lang_chi">請選擇語言</string>
+    <string name="sel_fresh_chi">請選擇更新速度</string>
+    <string name="sel_retry_chi">請選擇重試速度</string>
+    <string name="sel_color_chi">請選擇背景</string>
+    <string name="sel_ringtone_chi">請選擇提示聲效</string>
+    <string name="chinese_trad">繁體中文</string>
+    
+    <string name="refresh_eng">Update</string>
+    <string name="option_eng">Settings</string>
+    <string name="about_eng">About</string>
+    <string name="sel_lang_eng">Language</string>
+    <string name="sel_fresh_eng">Please select the refresh rate</string>
+    <string name="sel_retry_eng">Please select the retry rate</string>
+    <string name="sel_color_eng">Please select the background</string>
+    <string name="sel_ringtone_eng">Please pick a tone</string>
+    <string name="english">English</string>
+    
+    <string name="red_chi">紅色</string>
+    <string name="green_chi">綠色</string>
+    <string name="blue_chi">藍色</string>
+    <string name="grey_chi">灰階</string>
+    <string name="alpha_chi">透明度</string>
+    <string name="shadow_chi">陰影</string>
+    <string name="choose_col_chi">請選擇顏色</string>
+    <string name="red_eng">Red</string>
+    <string name="green_eng">Green</string>
+    <string name="blue_eng">Blue</string>
+    <string name="grey_eng">Grey Scale</string>
+    <string name="alpha_eng">Alpha</string>
+    <string name="shadow_eng">Shadow</string>
+    <string name="choose_col_eng">Choose Palette</string>
+    
+    <string name="tab1_chi">天氣預報</string>
+    <string name="tab2_chi">七天天氣預報</string>
+    <string name="tab3_chi">地區天氣報告</string>
+    <!-- <string name="tab4_chi">空氣污染指數</string> -->
+    <string name="tab4_chi">熱帶氣旋警告</string>
+    <string name="tab1_eng">Weather Forecast</string>
+    <string name="tab2_eng">7-day Weather Forecast</string>
+    <string name="tab3_eng">Current Weather Report</string>
+    <!-- <string name="tab4_eng">Air Pollution Index</string> -->
+    <string name="tab4_eng">Tropical Cyclone Warning</string>
+    
+    <string name="updated_chi">已更新</string>
+    <string name="updated_eng">Updated</string>
+    <string name="retry_chi">重試中...</string>
+    <string name="retry_eng">Reconnecting...</string>
+    <string name="btn_cancel_chi">取消</string>
+    <string name="btn_cancel_eng">Cancel</string>
+    <string name="btn_ok_chi">確定</string>
+    <string name="btn_ok_eng">OK</string>
+
+    <string name="cannot_connect_chi">未能連線到伺服器</string>
+    <string name="internal_error_chi">內部錯誤</string>
+    <string name="cannot_connect_eng">Cannot connect to server</string>
+    <string name="internal_error_eng">Internal Error</string>
+    
+    <string name="forecast_url_chi">http://rss.weather.gov.hk/rss/LocalWeatherForecast_big5.xml</string>
+    <string name="sevenday_url_chi">http://rss.weather.gov.hk/rss/SeveralDaysWeatherForecast_big5.xml</string>
+    <string name="geticon_url">http://pda.weather.gov.hk/localc.htm</string>
+    <string name="get7icon_url">http://pda.weather.gov.hk/ndayc.htm</string>
+    <string name="current_url_chi">http://rss.weather.gov.hk/rss/CurrentWeather_big5.xml</string>
+    <string name="air_chi">http://al1.epd-asg.gov.hk/out/capi_rss.xml</string>
+    <string name="warning_chi">http://pda.weather.gov.hk/announcc.htm</string>
+    <string name="forecast_url_eng">http://rss.weather.gov.hk/rss/LocalWeatherForecast.xml</string>
+    <string name="sevenday_url_eng">http://rss.weather.gov.hk/rss/SeveralDaysWeatherForecast.xml</string>
+    <string name="geticon_url_eng">http://pda.weather.gov.hk/localc.htm</string>
+    <string name="get7icon_url_eng">http://pda.weather.gov.hk/ndayc.htm</string>
+    <string name="current_url_eng">http://rss.weather.gov.hk/rss/CurrentWeather.xml</string>
+    <string name="air_eng">http://al1.epd-asg.gov.hk/out/api_rss.xml</string>
+    <string name="warning_eng">http://pda.weather.gov.hk/announce.htm</string>
+    <string name="typhoon_pos">http://www.weather.gov.hk/wxinfo/currwx/tc_pos.htm</string>
+    <string name="typhoon_pos_url">http://www.weather.gov.hk/wxinfo/currwx/tc_zzzz.png</string>
+    
+    <string name="widget_small">HK Weather Widget 2x1</string>
+    <string name="widget_large">HK Weather Widget 4x1</string>
+   </resources>
