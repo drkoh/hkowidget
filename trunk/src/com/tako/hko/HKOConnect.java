@@ -772,7 +772,7 @@ public class HKOConnect {
     		if (examiner.matches("(?i:.*rainstorm.*)")) {
     			if (examiner.matches("(?i:.*amber.*)"))
     				current.setFireWarning("amberrain");
-    			if (examiner.matches("(?i:red.*)"))
+    			if (examiner.matches("(?i:.*red.*)"))
     				current.setFireWarning("redrain");
     			if (examiner.matches("(?i:.*black.*)"))
     				current.setFireWarning("blackrain");
