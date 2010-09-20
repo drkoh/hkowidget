@@ -485,7 +485,7 @@ public class HKOActivity extends TabActivity {
     	View view = View.inflate(HKOActivity.this, R.layout.about, null);   
     	TextView textView = (TextView) view.findViewById(R.id.aboutText); 
     	//PackageManager pm = getPackageManager();
-    	textView.setText("HK Weather Widget 5.14 (For Froyo)\n" +
+    	textView.setText("HK Weather Widget 5.15 (For Froyo)\n" +
 				   "Tako Au 2009\n" +
 				   "\n" +
 				   "Special Thanks:\n" +
