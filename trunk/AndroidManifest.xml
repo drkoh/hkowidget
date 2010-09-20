@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.tako.hko"
-      android:versionCode="108"
-      android:versionName="5.14">
+      android:versionCode="109"
+      android:versionName="5.15">
     <application android:icon="@drawable/logo" android:label="@string/app_name">
     <!-- android:debuggable="true"> -->
         <activity android:name=".HKOActivity"
