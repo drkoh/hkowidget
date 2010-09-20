@@ -48,21 +48,21 @@
     </array>
     <string-array name="noti_refresh_chi">
     	<item>永不</item>
-    	<item>十五分鐘</item>
+    	<item>五分鐘</item>
+        <item>十分鐘</item>
         <item>半小時</item>
-        <item>一小時</item>
     </string-array>
     <string-array name="noti_refresh_eng">
     	<item>Never</item>
-    	<item>15 minutes</item>
+    	<item>5 minutes</item>
+        <item>10 minutes</item>
         <item>30 minutes</item>
-        <item>1 hour</item>
     </string-array>
     <array name="noti_refresh_value">
     	<item>0</item>
-    	<item>900</item>
+    	<item>300</item>
+    	<item>600</item>
     	<item>1800</item>
-    	<item>3600</item>
     </array>
     <string-array name="retry_chi">
     	<item>永不</item>
