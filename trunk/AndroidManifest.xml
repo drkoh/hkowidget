@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.tako.hko"
-      android:versionCode="109"
-      android:versionName="5.15">
-    <application android:icon="@drawable/logo" android:label="@string/app_name">
-    <!-- android:debuggable="true"> -->
+      android:versionCode="110"
+      android:versionName="5.16">
+    <application android:icon="@drawable/logo" android:label="@string/app_name" android:debuggable="true">
         <activity android:name=".HKOActivity"
                   android:label="@string/app_name">    
             <!-- <intent-filter>
@@ -26,7 +25,7 @@
 			<intent-filter>
    		     	<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
    	 		</intent-filter>
-    		<meta-data android:name="android.appwidget.provider"
+    		 <meta-data android:name="android.appwidget.provider"
         		       android:resource="@xml/hkowidget_small"/>
 		</receiver>
 		<receiver android:name=".HKOSmallWidget">
@@ -42,6 +41,8 @@
         		<action android:name="com.tako.hko.WIDGET_CONTROL" />
         		<data android:scheme="update_small_widget" />
      		</intent-filter>
+     		<meta-data android:name="android.appwidget.provider"
+        		       android:resource="@xml/hkowidget_small"/>
   		</receiver>
   		<!-- Widget 1 End -->
   		<!-- Widget 2 -->
@@ -65,6 +66,8 @@
         		<action android:name="com.tako.hko.WIDGET_CONTROL" />
         		<data android:scheme="update_large_widget" />
      		</intent-filter>
+     		<meta-data android:name="android.appwidget.provider"
+        		       android:resource="@xml/hkowidget_small"/>
   		</receiver>
   		<!-- Widget 2 End -->
 		<!-- Receiver for startup notification -->
