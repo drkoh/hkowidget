@@ -554,7 +554,7 @@ public class HKOConnect {
 	private String getTyphoonCode(Context context, int language) {
 		String urlString = context.getString(R.string.typhoon_pos);
 		String tempString;
-		String result = null;
+		String result = "";
 		URL url = null;
 		HttpURLConnection conn = null;
 		BufferedReader reader = null;
@@ -779,9 +779,9 @@ public class HKOConnect {
     		}
     		
      		
-     		if (examiner.matches("(?i:.*yellow fire.*)"))
+     		if (examiner.matches("(?i:.*fire.*.yellow.*)"))
      			current.setFireWarning("yellow");
-     		if (examiner.matches("(?i:red fire.*)"))
+     		if (examiner.matches("(?i:.*fire.*red.*)"))
      			current.setFireWarning("red");
 
     		if (examiner.matches("(?i:.*Thunderstorm Warning.*)"))
@@ -844,6 +844,7 @@ public class HKOConnect {
 	
 	private boolean checkConnectivity(Context context) {
 		ConnectivityManager cm =  (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (cm == null) return false;
 		//return cm.getActiveNetworkInfo().isConnectedOrConnecting();
 		Log.e(TAG, "Is connected? " + (cm.getActiveNetworkInfo() == null ? "false" : cm.getActiveNetworkInfo().isConnected()));
 		return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
