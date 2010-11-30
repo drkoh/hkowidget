@@ -485,11 +485,12 @@ public class HKOActivity extends TabActivity {
     	View view = View.inflate(HKOActivity.this, R.layout.about, null);   
     	TextView textView = (TextView) view.findViewById(R.id.aboutText); 
     	//PackageManager pm = getPackageManager();
-    	textView.setText("HK Weather Widget 5.15 (For Froyo)\n" +
+    	textView.setText("HK Weather Widget 5.18\n" +
 				   "Tako Au 2009\n" +
 				   "\n" +
 				   "Special Thanks:\n" +
-				   "Chris_C已切, Maize, Vikkilein");   
+				   "Chris_C已切, Maize\n" +
+				   "Dedicate to Vikkilein");   
     	new AlertDialog.Builder(HKOActivity.this).setTitle(   
     	        R.string.about_eng).setView(view)   
     	        .setPositiveButton(android.R.string.ok, null)   
