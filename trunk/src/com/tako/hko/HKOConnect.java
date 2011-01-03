@@ -29,7 +29,7 @@ import android.net.ConnectivityManager;
 import android.util.Log;
 
 public class HKOConnect {
-	private final String PREFS_NAME = "HKOPrefs";
+	//private final String PREFS_NAME = "HKOPrefs";
 	private final String TAG = "HKOConnect";
 	private Hashtable<String, Integer> hash;
 	private final int TIMEOUT = 5000;

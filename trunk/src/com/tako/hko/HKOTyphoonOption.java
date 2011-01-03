@@ -4,11 +4,8 @@ import java.util.ArrayList;
 
 import com.tako.hko.R;
 
-import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.ListActivity;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -115,7 +112,7 @@ public class HKOTyphoonOption extends ListActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
     	if (resultCode == RESULT_OK) {
-    		LinearLayout rl = (LinearLayout) list.getChildAt(4);
+    		//LinearLayout rl = (LinearLayout) list.getChildAt(4);
         	TyphoonAdapter newAdapter = (TyphoonAdapter) this.getListView().getAdapter();
         	TyphoonOption option = newAdapter.getItem(4);
         	

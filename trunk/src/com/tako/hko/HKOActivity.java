@@ -485,7 +485,7 @@ public class HKOActivity extends TabActivity {
     	View view = View.inflate(HKOActivity.this, R.layout.about, null);   
     	TextView textView = (TextView) view.findViewById(R.id.aboutText); 
     	//PackageManager pm = getPackageManager();
-    	textView.setText("HK Weather Widget 5.18\n" +
+    	textView.setText("HK Weather Widget 5.19\n" +
 				   "Tako Au 2009\n" +
 				   "\n" +
 				   "Special Thanks:\n" +
@@ -524,6 +524,14 @@ public class HKOActivity extends TabActivity {
     	}
     	return super.onCreateDialog(id);
     }
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		TabHost mTabHost = getTabHost();
+		getData(mTabHost.getCurrentTab());
+	}
     
     
 }
