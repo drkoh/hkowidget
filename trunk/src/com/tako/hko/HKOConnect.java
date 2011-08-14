@@ -120,12 +120,12 @@ public class HKOConnect {
     		conn = (HttpURLConnection) url.openConnection();
 
     		conn.setConnectTimeout(TIMEOUT);
-    		Log.e(TAG, "Last Modified Time : " + lastModified);
+    		//Log.e(TAG, "Last Modified Time : " + lastModified);
     		if (lastModified != null)
     			conn.addRequestProperty("If-Modified-Since", lastModified);
 
     		conn.connect();
-    		Log.e(TAG, "Response Code is : " + conn.getResponseCode());
+    		//Log.e(TAG, "Response Code is : " + conn.getResponseCode());
     		if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
     			//    		01-19 23:58:26.515: ERROR/HKOConnect(365): Last Modified : 1263914197000
     			doc = db.parse(conn.getInputStream());
@@ -270,8 +270,6 @@ public class HKOConnect {
 			reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			while ((tempString = reader.readLine()) != null) {
 				try {
-					Log.e(TAG, tempString.substring(tempString.indexOf("pic"),
-							tempString.lastIndexOf("png")));
 					iconId = hash.get(tempString.substring(tempString.indexOf("pic"),
 							tempString.lastIndexOf("png"))).intValue();
 
@@ -285,8 +283,6 @@ public class HKOConnect {
 		} finally {
 			if (conn != null) conn.disconnect();
 		}
-		Log.e(TAG, String.valueOf(iconId));
-
 		oh.writeFile(new Integer(iconId), WIDGET_ICON);
 		return iconId;
 	}
@@ -458,7 +454,6 @@ public class HKOConnect {
     	CurrentWeatherWrapper result =  parseDailyInfo(dailyInfo, context, language, widgetUse);
 
     	if (!widgetUse) {
-    		Log.e(TAG, "Writing files");
     		oh.writeFile(result, LOCAL_TEMPERATURE);
     	} else {
     		oh.writeFile(result, WIDGET_FORECAST);
@@ -468,7 +463,6 @@ public class HKOConnect {
 	
 	//  For Activity use
 	public Warnings getWarning(Context context, int language) {
-		Log.e(TAG, "Start");
 		URL url = null;
 		HttpURLConnection conn = null;
         //SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
@@ -499,12 +493,10 @@ public class HKOConnect {
     		conn = (HttpURLConnection) url.openConnection();
 
     		conn.setConnectTimeout(TIMEOUT);
-    		Log.e(TAG, "Last Modified Time : " + lastModified);
     		//if (lastModified != null)
     		//	conn.addRequestProperty("If-Modified-Since", lastModified);
 
     		conn.connect();
-    		Log.e(TAG, "Response Code is : " + conn.getResponseCode());
     		if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
     			//    		01-19 23:58:26.515: ERROR/HKOConnect(365): Last Modified : 1263914197000
     			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "Big5"));
@@ -541,7 +533,6 @@ public class HKOConnect {
 			.replaceAll("<hr/>", "").trim();
 		oWarning = oWarning.replaceAll("<br/>", "\n").replaceAll("<p>", "\n").replaceAll("<p/>", "\n")
 			.replaceAll("<hr/>", "").trim();
-		Log.e(TAG, "tWarning : " + tWarning);
     	oh.writeFile(new Warnings(tWarning, oWarning), WEATHER_WARNING);
     	//Log.e(TAG, "Warning : " + warning);
     	result.setOtherWarning(oWarning);
@@ -579,7 +570,6 @@ public class HKOConnect {
     				if (tempString.matches(".*tc_[0-9]{4}[.]png.*")) {
     					result = tempString.substring(tempString.indexOf("tc_") + 3,
     							tempString.indexOf(".png"));
-    					Log.e(TAG, "typhoon_code is : " + result);
     				}
     					
     			} catch (IndexOutOfBoundsException e) {	
@@ -622,10 +612,7 @@ public class HKOConnect {
     		conn = (HttpURLConnection) url.openConnection();
 
     		conn.setConnectTimeout(TIMEOUT);
-    		Log.e(TAG, "Last Modified Time : " + lastModified);
-    
     		conn.connect();
-    		Log.e(TAG, "Response Code is : " + conn.getResponseCode());
     		if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
     			result = BitmapFactory.decodeStream(conn.getInputStream());
     			
@@ -659,7 +646,8 @@ public class HKOConnect {
         ObjectHandler oh = new ObjectHandler(context, language);
     	String lastModified = oh.getLastModified(AIR_POLLUTION);
     	String cannotConnectString = null, internalErrorString = null, urlString = null;
-    	
+		Pollution result = new Pollution(cannotConnectString, "");
+		
     	if (language == Misc.CHINESE) {
     		cannotConnectString = context.getString(R.string.cannot_connect_chi);
     		internalErrorString = context.getString(R.string.internal_error_chi);
@@ -693,7 +681,6 @@ public class HKOConnect {
     			conn.addRequestProperty("If-Modified-Since", lastModified);
 
     		conn.connect();
-    		Log.e(TAG, "Response Code is : " + conn.getResponseCode());
     		if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
     			//    		01-19 23:58:26.515: ERROR/HKOConnect(365): Last Modified : 1263914197000
     			doc = db.parse(conn.getInputStream());
@@ -713,7 +700,6 @@ public class HKOConnect {
 			if (conn != null) conn.disconnect();
 		}
     	
-		Pollution result = null;
     	try {
     		Element channel = (Element) doc.getElementsByTagName("channel").item(0);
     		//Element title = (Element) channel.getElementsByTagName("title").item(0);
@@ -758,7 +744,6 @@ public class HKOConnect {
      		if (examiner.matches(".*the mean UV Index recorded at King's Park : .*")) {
      			current.setUvLevel(
      					examiner.replaceAll("During the past hour.*the mean UV Index recorded at King's Park : ", "").trim());
-     			Log.e(TAG, examiner);
      		}
      		
      		if (examiner.matches("(?i:.*monsoon.*)"))
@@ -815,7 +800,6 @@ public class HKOConnect {
      		else {
      			String[] temp = input.split("</table></font></p>");
      			tokens = temp[0].replaceAll("\"", "").split("<tr><td><font size=-1>");
-     			Log.e(TAG, temp[0]);
      		}
      		for (int i = 1; i < tokens.length; i++) {
      			String[] pair = null;
@@ -846,7 +830,7 @@ public class HKOConnect {
 		ConnectivityManager cm =  (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (cm == null) return false;
 		//return cm.getActiveNetworkInfo().isConnectedOrConnecting();
-		Log.e(TAG, "Is connected? " + (cm.getActiveNetworkInfo() == null ? "false" : cm.getActiveNetworkInfo().isConnected()));
+		//Log.e(TAG, "Is connected? " + (cm.getActiveNetworkInfo() == null ? "false" : cm.getActiveNetworkInfo().isConnected()));
 		return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
 		
 	}

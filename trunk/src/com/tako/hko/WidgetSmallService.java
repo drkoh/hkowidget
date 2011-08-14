@@ -81,14 +81,11 @@ public class WidgetSmallService extends Service {
 		new Thread(){
 			public void run(){
 
-				// wl.acquire();
-				Log.e(TAG, "Lock accquired");
-				//if (!upFlag && oldState != null) {
 				HKOConnect dataMine = new HKOConnect();
 				if (!upFlag) {
 					current = dataMine.getOldWrapper(sContext);
 					todayIcon = dataMine.getOldIcon(sContext);
-					Log.e(TAG, "icon : " + todayIcon);
+					//Log.e(TAG, "icon : " + todayIcon);
 				} else {
 					current = dataMine.getCurrentWeather(sContext, Misc.ENGLISH, true);
 					todayIcon = dataMine.getForecastIcon(sContext);
@@ -96,7 +93,7 @@ public class WidgetSmallService extends Service {
 
 				//  Set alarm
 				int currentValue = 0;
-				Log.e(TAG, "Error : " + current.getError());
+				//Log.e(TAG, "Error : " + current.getError());
 				if (current.getError() != -1) {
 					currentValue = settings.getInt("refresh", 1800);
 					views.setImageViewResource(R.id.error_small, R.drawable.empty);
@@ -114,12 +111,12 @@ public class WidgetSmallService extends Service {
 					PendingIntent newPending = PendingIntent.getBroadcast(sContext, 0, widgetUpdate, PendingIntent.FLAG_UPDATE_CURRENT);
 					AlarmManager alarm = (AlarmManager) sContext.getSystemService(Context.ALARM_SERVICE);
 					alarm.cancel(newPending);
-					Log.e(TAG, "Cancelling and re-creating");
+					//Log.e(TAG, "Cancelling and re-creating");
 
 					alarm.set(AlarmManager.RTC, System.currentTimeMillis() + currentValue * 1000, newPending);
 				}
 				//Toast.makeText(context, "New Alarm for " + appWidgetId, Toast.LENGTH_LONG).show();
-				Log.e(TAG, "New Alarm for " + widgetId + ". Refresh Value : " + currentValue);
+				//Log.e(TAG, "New Alarm for " + widgetId + ". Refresh Value : " + currentValue);
 
 				Date now = new Date(System.currentTimeMillis() + currentValue * 1000);
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd h:mm:ss a");
@@ -127,7 +124,7 @@ public class WidgetSmallService extends Service {
 
 				widgetHandle.sendEmptyMessage(0);
 				if (wl != null && wl.isHeld()) wl.release();
-				Log.e(TAG, "Lock release");
+				//Log.e(TAG, "Lock release");
 
 			}
 		}.start();
@@ -201,9 +198,9 @@ public class WidgetSmallService extends Service {
 				editor.putString("last_update", sdf.format(cal.getTime()));
 			editor.commit();
 			views.setViewVisibility(R.id.updateText_small, View.INVISIBLE);
-			Log.e(TAG, "Start updating widget");
+			//Log.e(TAG, "Start updating widget");
 			manager.updateAppWidget(widgetId, views);
-			Log.e(TAG, "End updating widget");
+			//Log.e(TAG, "End updating widget");
 			//if (wl != null && wl.isHeld()) wl.release();
 
 			super.handleMessage(msg);

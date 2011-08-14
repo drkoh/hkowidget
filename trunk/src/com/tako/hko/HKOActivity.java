@@ -98,7 +98,7 @@ public class HKOActivity extends TabActivity {
     	language = settings.getInt("language", 0);
     	
     	widgetId = this.getIntent().getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
-    	Log.e(TAG, "Widget ID = " + widgetId);
+    	//Log.e(TAG, "Widget ID = " + widgetId);
     	
     	String tab1Text = null, tab2Text = null, tab3Text = null, tab4Text = null;
     	if (language == Misc.CHINESE) {
@@ -126,13 +126,10 @@ public class HKOActivity extends TabActivity {
         mTabHost.setOnTabChangedListener(
         		new TabHost.OnTabChangeListener() {
         			public void onTabChanged(String tabId) {
-        		    	Log.e(TAG, "Showed");
-
         				if (tabId.equals("tab1")) getData(0);
         				else if (tabId.equals("tab2")) getData(1);
         				else if (tabId.equals("tab3")) getData(2);
         				else if (tabId.equals("tab4")) getData(3);
-        				Log.e(TAG, "Dismiss");
         				//pBar.dismiss();
         			}
         		}
@@ -230,7 +227,6 @@ public class HKOActivity extends TabActivity {
     			//  Update widget information
     			//this.sendWidget(true);
     			
-    			Log.e(TAG, "Refreshed");
     			Toast.makeText(this.getApplicationContext(), updateString, Toast.LENGTH_LONG).show();
     			break;
     		case MENU_OPTION:
@@ -253,10 +249,10 @@ public class HKOActivity extends TabActivity {
     			else
     				tab1Display.setText(getString(R.string.cannot_connect_eng));
     		} else {
-    			Log.e(TAG, "warning is null ? " + (warningIcon == null));
-    			Log.e(TAG, "Icon is null ? " + (tab1IconFire == null));
-    			Log.e(TAG, "Fire : " + warningIcon.getFireWarning());
-    			Log.e(TAG, "Other : " + warningIcon.getOther());
+    			//Log.e(TAG, "warning is null ? " + (warningIcon == null));
+    			//Log.e(TAG, "Icon is null ? " + (tab1IconFire == null));
+    			//Log.e(TAG, "Fire : " + warningIcon.getFireWarning());
+    			//Log.e(TAG, "Other : " + warningIcon.getOther());
 //    			tab1IconFire.setMaxHeight(20);
     			tab1IconFire.setImageResource(warningIcon.getFireWarning());
     			tab1IconTemp.setImageResource(warningIcon.getExtremeTemp());
@@ -371,6 +367,7 @@ public class HKOActivity extends TabActivity {
     	
     	switch (tabNo) {
     	case 0:
+    		forecastOutput = "";
     		tab1Display = (TextView) this.findViewById(R.id.weather_tab);
     		tab1Image = (ImageView) this.findViewById(R.id.tab1_image);
     		tab1Warning = (TextView) this.findViewById(R.id.warning_text);
@@ -485,7 +482,7 @@ public class HKOActivity extends TabActivity {
     	View view = View.inflate(HKOActivity.this, R.layout.about, null);   
     	TextView textView = (TextView) view.findViewById(R.id.aboutText); 
     	//PackageManager pm = getPackageManager();
-    	textView.setText("HK Weather Widget 5.19\n" +
+    	textView.setText("HK Weather Widget 5.21\n" +
 				   "Tako Au 2009\n" +
 				   "\n" +
 				   "Special Thanks:\n" +

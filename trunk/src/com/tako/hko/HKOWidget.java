@@ -16,6 +16,7 @@ public class HKOWidget extends AppWidgetProvider {
 	@Override
 	public void onDeleted(Context context, int[] appWidgetIds) {
 		super.onDeleted(context, appWidgetIds);
+		System.gc();
 	}
 
 	@Override

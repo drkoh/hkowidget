@@ -10,6 +10,8 @@ public class Pollution implements Serializable {
 	private String current;
 	private String forecast;
 	
+	public Pollution() {}
+	
 	public Pollution(String current, String forecast) {
 		this.current = current;
 		this.forecast = forecast;
