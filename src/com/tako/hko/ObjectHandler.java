@@ -77,14 +77,14 @@ public class ObjectHandler{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Log.e(TAG, "Is null ? " + (result == null));
+		//Log.e(TAG, "Is null ? " + (result == null));
 		return result;
 		
 	}
 	
 	public String getLastModified(int type) {
 		String filename = this.getFilename(type);
-		Log.e(TAG, context.getFilesDir() + "/" + filename);
+		//Log.e(TAG, context.getFilesDir() + "/" + filename);
 		File file = new File(context.getFilesDir() + "/" + filename);
 		return Misc.getLastModified(file.lastModified());
 		

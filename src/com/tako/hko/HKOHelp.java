@@ -10,7 +10,6 @@ public class HKOHelp extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.setContentView(R.layout.help_layout);
 		TextView tv = (TextView) this.findViewById(R.id.instruction);
 		tv.setText("Thanks for using HK Weather Widget!\n\n" +
 				"I am sorry that you cannot open this widget as it is a pure widget.  " +
@@ -24,6 +23,7 @@ public class HKOHelp extends Activity {
 				finish();
 			}
 		});
+		this.setContentView(R.layout.help_layout);
 		
 	}
 

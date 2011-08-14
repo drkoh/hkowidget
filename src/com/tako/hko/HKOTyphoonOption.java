@@ -56,10 +56,10 @@ public class HKOTyphoonOption extends ListActivity {
     	editor.putBoolean("black_noti", check2.isChecked());
     	editor.putBoolean("typhoon_vibrate", check3.isChecked());
     	editor.putBoolean("sound", check4.isChecked());
-    	Log.e(TAG, "1 is " + check1.isChecked());
-    	Log.e(TAG, "2 is " + check2.isChecked());
-    	Log.e(TAG, "3 is " + check3.isChecked());
-    	Log.e(TAG, "4 is " + check4.isChecked());
+    	//Log.e(TAG, "1 is " + check1.isChecked());
+    	//Log.e(TAG, "2 is " + check2.isChecked());
+    	//Log.e(TAG, "3 is " + check3.isChecked());
+    	//Log.e(TAG, "4 is " + check4.isChecked());
         editor.commit();
     }
     
@@ -129,7 +129,6 @@ public class HKOTyphoonOption extends ListActivity {
     		}
     		editor.commit();
     	}
-    	Log.e(TAG, "Result Code :" + resultCode);
     	//this.generateList();
     }
     

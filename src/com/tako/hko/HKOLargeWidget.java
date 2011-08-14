@@ -56,7 +56,7 @@ public class HKOLargeWidget extends HKOWidget {
 
 		if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(action)) {
 
-			final int[] appWidgetIds = intent.getExtras().getIntArray(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+			final int[] appWidgetIds = intent.getExtras() != null ? intent.getExtras().getIntArray(AppWidgetManager.EXTRA_APPWIDGET_IDS) : new int[1];
 			this.upFlag = intent.getExtras().getBoolean("updateFlag", true);
 			this.iFlag = intent.getExtras().getBoolean("iUpdate", false);
 			//tContext = context;

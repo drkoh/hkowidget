@@ -44,7 +44,7 @@ public class CurrentWeatherWrapper implements Serializable {
 		this.humidity = Integer.parseInt(humidity);
 	}
 	public void setUvLevel(String uvLevel) {
-		Log.e("Testing", "UV Level is : " + uvLevel);
+		//Log.e("Testing", "UV Level is : " + uvLevel);
 		try {
 			this.uvLevel = Float.valueOf(uvLevel).floatValue();
 		} catch (NumberFormatException e) {

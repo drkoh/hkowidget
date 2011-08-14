@@ -154,7 +154,6 @@ public class SeekbarFactory {
 		grey.setText(greyLabel);
 		grey.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			public void onCheckedChanged(CompoundButton button, boolean isChecked) {
-				Log.e(TAG, "Clicked : " + greyScale);
 				greyScale = isChecked;					
 			}
 		});

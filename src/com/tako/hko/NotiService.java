@@ -61,7 +61,7 @@ public class NotiService extends Service {
 					PendingIntent newPending = PendingIntent.getBroadcast(sContext, 0, notiUpdate, PendingIntent.FLAG_UPDATE_CURRENT);
 					AlarmManager alarm = (AlarmManager) sContext.getSystemService(Context.ALARM_SERVICE);
 					alarm.cancel(newPending);
-					Log.e(TAG, "Cancelling and re-creating");
+					//Log.e(TAG, "Cancelling and re-creating");
 
 					alarm.set(AlarmManager.RTC, System.currentTimeMillis() + currentValue * 1000, newPending);
 				}
@@ -88,7 +88,7 @@ public class NotiService extends Service {
 			if (cal.get(Calendar.MONTH) == 3 && cal.get(Calendar.DAY_OF_MONTH) == 1 && cal.get(Calendar.HOUR) >= 1 && cal.get(Calendar.AM_PM) == Calendar.PM) {
 				current.setTyphoon("10");
 				typhoonNoti = true;
-				Log.e(TAG, "Typhoon!!");
+				//Log.e(TAG, "Typhoon!!");
 				egg = true;
 			}
 			//  Easter Egg
@@ -140,8 +140,8 @@ public class NotiService extends Service {
 				editor.putInt("typhoon_status", current.getTyphoonNo());
 				editor.commit();
 
-				Log.e(TAG, "current typhoon : " + current.getTyphoonNo());
-				Log.e(TAG, "Icon : " + typhoonIcon);
+				//Log.e(TAG, "current typhoon : " + current.getTyphoonNo());
+				//Log.e(TAG, "Icon : " + typhoonIcon);
 
 				if (typhoonIcon != -1) {
 					String typhoonText = "Typhoon Signal Hoisted";
